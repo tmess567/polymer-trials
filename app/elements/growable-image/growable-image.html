@@ -1,0 +1,27 @@
+<dom-module id="growable-image">
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
+			.grow{ 
+				transition: all .2s ease-in-out; 
+			}
+			.grow:hover{ 
+				transform: scale(1.1); 
+			}
+		</style>
+		<a href="{{user}}" id="UsrLink">
+            <img src="{{src}}" style="width:500px;" class="grow">
+        </a>
+	</template>
+	<script>
+		Polymer({
+			is: 'growable-image',
+			properties: {
+				src: String,
+				user: String
+			}
+		});
+	</script>
+</dom-module>
