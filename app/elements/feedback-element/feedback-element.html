@@ -1,0 +1,22 @@
+<link rel="import" href="../elements.html">
+<dom-module id="feedback-element">
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
+		</style>
+		<firebase-collection
+	      location="https://cvtdpdstq0i.firebaseio-demo.com/"
+	      data="{{msg}}"></firebase-collection>
+	    <template is="dom-repeat" items="[[msg]]" as="msgs">
+	      <h4>[[msgs.name]]</h4>
+	      <span>[[msgs.text]]</span>
+	    </template>
+	</template>
+	<script>
+		Polymer({
+			is: 'feedback-element'
+		});
+	</script>
+</dom-module>
